@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wendy123123.github.io</id>
+    <id>https://www.banzhuanke.com</id>
     <title>代码搬运点</title>
-    <updated>2020-03-20T02:10:43.769Z</updated>
+    <updated>2020-03-20T02:28:19.542Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wendy123123.github.io"/>
-    <link rel="self" href="https://wendy123123.github.io/atom.xml"/>
+    <link rel="alternate" href="https://www.banzhuanke.com"/>
+    <link rel="self" href="https://www.banzhuanke.com/atom.xml"/>
     <subtitle>快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态</subtitle>
-    <logo>https://wendy123123.github.io/images/avatar.png</logo>
-    <icon>https://wendy123123.github.io/favicon.ico</icon>
+    <logo>https://www.banzhuanke.com/images/avatar.png</logo>
+    <icon>https://www.banzhuanke.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 代码搬运点</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://wendy123123.github.io/post/hello-gridea/</id>
-        <link href="https://wendy123123.github.io/post/hello-gridea/">
+        <id>https://www.banzhuanke.com/post/hello-gridea/</id>
+        <link href="https://www.banzhuanke.com/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
