@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wendy123123.github.io</id>
+    <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy123123</title>
-    <updated>2020-08-19T07:52:27.109Z</updated>
+    <updated>2020-08-19T07:57:17.110Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wendy123123.github.io"/>
-    <link rel="self" href="https://wendy123123.github.io/atom.xml"/>
+    <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
+    <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
     <subtitle>快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态</subtitle>
-    <logo>https://wendy123123.github.io/images/avatar.png</logo>
-    <icon>https://wendy123123.github.io/favicon.ico</icon>
+    <logo>https://wendy-banzhuanke.github.io/images/avatar.png</logo>
+    <icon>https://wendy-banzhuanke.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wendy123123</rights>
     <entry>
         <title type="html"><![CDATA[什么是Event Loop]]></title>
-        <id>https://wendy123123.github.io/post/1-shi-me-shi-event-loop/</id>
-        <link href="https://wendy123123.github.io/post/1-shi-me-shi-event-loop/">
+        <id>https://wendy-banzhuanke.github.io/post/1-shi-me-shi-event-loop/</id>
+        <link href="https://wendy-banzhuanke.github.io/post/1-shi-me-shi-event-loop/">
         </link>
         <updated>2020-07-17T01:16:28.000Z</updated>
         <summary type="html"><![CDATA[<h6 id="event-loop是一个执行事件的模型规定了一些特定函数的执行时机-浏览器和nodejs基于不同的技术实现了各自的event-loop">Event loop是一个执行事件的模型，规定了一些特定函数的执行时机。浏览器和NodeJS基于不同的技术实现了各自的Event Loop。</h6>
@@ -42,7 +42,7 @@
 <li>MutationObserver</li>
 </ul>
 <h3 id="3-浏览器的event-loop">3. 浏览器的Event Loop</h3>
-<figure data-type="image" tabindex="1"><img src="https://wendy123123.github.io/post-images/1591154491005.png" alt="Image text" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://wendy-banzhuanke.github.io/post-images/1591154491005.png" alt="Image text" loading="lazy"></figure>
 <p>这张图将浏览器的Event Loop完整的描述了出来，我来讲执行一个JavaScript代码的具体流程：</p>
 <ol>
 <li>执行全局Script同步代码，这些同步代码有一些是同步语句，有一些是异步语句（比如setTimeout等）；</li>
@@ -71,8 +71,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://wendy123123.github.io/post/hello-gridea/</id>
-        <link href="https://wendy123123.github.io/post/hello-gridea/">
+        <id>https://wendy-banzhuanke.github.io/post/hello-gridea/</id>
+        <link href="https://wendy-banzhuanke.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

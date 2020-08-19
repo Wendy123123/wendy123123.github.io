@@ -8,9 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wendy123123.github.io/favicon.ico?v=1597823508193">
-<link rel="stylesheet" href="https://wendy123123.github.io/styles/main.css">
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1597823835542">
+<link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -34,8 +40,8 @@ Gridea 主页
       <div class="sidebar" :class="{ 'full-height': menuVisible }">
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
-      <a class="site-title-container" href="https://wendy123123.github.io">
-        <img src="https://wendy123123.github.io/images/avatar.png?v=1597823508193" class="site-logo">
+      <a class="site-title-container" href="https://wendy-banzhuanke.github.io">
+        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1597823835542" class="site-logo">
         <h1 class="site-title">wendy123123</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -88,7 +94,7 @@ Gridea 主页
       快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态
     </div>
     <div class="site-footer">
-       | <a class="rss" href="https://wendy123123.github.io/atom.xml" target="_blank">RSS</a>
+       | <a class="rss" href="https://wendy-banzhuanke.github.io/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
@@ -100,7 +106,7 @@ Gridea 主页
             <h2 class="post-title">Hello Gridea</h2>
             <div class="post-date">2018-12-12</div>
             
-              <div class="feature-container" style="background-image: url('https://wendy123123.github.io/post-images/hello-gridea.png')">
+              <div class="feature-container" style="background-image: url('https://wendy-banzhuanke.github.io/post-images/hello-gridea.png')">
               </div>
             
             <div class="post-content" v-pre>
@@ -130,7 +136,7 @@ Gridea 主页
             
               <div class="tag-container">
                 
-                  <a href="https://wendy123123.github.io/tag/8VOQx1stK/" class="tag">
+                  <a href="https://wendy-banzhuanke.github.io/tag/8VOQx1stK/" class="tag">
                     Gridea
                   </a>
                 
@@ -138,6 +144,12 @@ Gridea 主页
             
             
 
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
             
 
           </div>
@@ -161,6 +173,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
