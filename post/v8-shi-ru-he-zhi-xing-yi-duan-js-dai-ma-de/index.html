@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>wendy-banzhuanke</title>
+<title>V8是如何执行一段js代码的 | wendy-banzhuanke</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,14 +12,26 @@
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态">
-    
+    <meta name="description" content="要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。
+####编译器（Compiler）
+####解释器（Interpreter）
+####抽象语法树（AST）
+####字节码（Bytecode）
+####即时编译器（JIT
+..." />
+    <meta name="keywords" content="JavaScript,V8" />
   </head>
   <body>
     <div id="app" class="main">
@@ -89,65 +101,52 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wendy-banzhuanke.github.io/post/1-shi-me-shi-event-loop/">
-                  <h2 class="post-title">什么是Event Loop</h2>
-                </a>
-                <div class="post-date">
-                  2020-07-17
-                </div>
-                <div class="post-abstract">
-                  <h6 id="event-loop是一个执行事件的模型规定了一些特定函数的执行时机-浏览器和nodejs基于不同的技术实现了各自的event-loop">Event loop是一个执行事件的模型，规定了一些特定函数的执行时机。浏览器和NodeJS基于不同的技术实现了各自的Event Loop。</h6>
+          <div class="post-detail">
+            <h2 class="post-title">V8是如何执行一段js代码的</h2>
+            <div class="post-date">2019-07-16</div>
+            
+            <div class="post-content" v-pre>
+              <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
+<p>####编译器（Compiler）</p>
+<p>####解释器（Interpreter）<br>
+####抽象语法树（AST）<br>
+####字节码（Bytecode）<br>
+####即时编译器（JIT</p>
 
-                </div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://wendy-banzhuanke.github.io/tag/H1PXxSYbt/" class="tag">
+                    JavaScript
+                  </a>
+                
+                  <a href="https://wendy-banzhuanke.github.io/tag/TwmOYHCy8/" class="tag">
+                    V8
+                  </a>
+                
               </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wendy-banzhuanke.github.io/post/v8-shi-ru-he-zhi-xing-yi-duan-js-dai-ma-de/">
-                  <h2 class="post-title">V8是如何执行一段js代码的</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-16
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
                 <a href="https://wendy-banzhuanke.github.io/post/hello-gridea/">
-                  <h2 class="post-title">Hello Gridea</h2>
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
                 </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-                </div>
               </div>
-              
-                <a class="right" href="https://wendy-banzhuanke.github.io/post/hello-gridea/">
-                  <div class="feature-container" style="background-image: url('https://wendy-banzhuanke.github.io/post-images/hello-gridea.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -168,6 +167,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
