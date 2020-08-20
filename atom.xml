@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-08-20T09:37:29.730Z</updated>
+    <updated>2020-08-20T10:07:54.804Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -99,7 +99,7 @@ myName = &quot;hello code&quot;
 foo()
 </code></pre>
 <p>转成AST树（与HTML代码转换成DOM树类似）：<br>
-<img src="https://wendy-banzhuanke.github.io/post-images/1597916229158.png" alt="" loading="lazy"></p>
+<img src="https://wendy-banzhuanke.github.io/post-images/1597918044261.png" alt="" loading="lazy"></p>
 <p>AST 是非常重要的一种数据结构，在很多项目中都有应用。如Babel、ESLint，Babel 是一个被广泛使用的代码转码器，可以将 ES6 代码转为 ES5 代码，这意味着你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持 ES6。Babel 的工作原理就是先将 ES6 源码转换为 AST，然后再将 ES6 语法的 AST 转换为 ES5 语法的 AST，最后利用 ES5 的 AST 生成 JavaScript 源代码。</p>
 <h4 id="字节码bytecode">字节码（Bytecode）</h4>
 <p>字节码就是介于 AST 和机器码之间的一种代码。但是与特定类型的机器码无关，字节码需要通过解释器将其转换为机器码后才能执行。</p>
@@ -108,7 +108,7 @@ foo()
 <figure data-type="image" tabindex="1"><img src="https://wendy-banzhuanke.github.io/post-images/1597915007180.png" alt="" loading="lazy"></figure>
 <p>具体到 V8，就是指解释器 Ignition 在解释执行字节码的同时，收集代码信息，当它发现某一部分代码变热了之后，TurboFan 编译器便闪亮登场，把热点的字节码转换为机器码，并把转换后的机器码保存起来，以备下次使用。</p>
 <h3 id="执行代码">执行代码</h3>
-<p>通过解释器将AST树生成字节码之后，如果有一段第一次执行的字节码，解释器 Ignition 会逐条解释执行字节码。<br>
+<p>通过解释器将AST树生成字节码之后，解释器 Ignition 会逐条解释执行字节码。<br>
 在 Ignition 执行字节码的过程中，如果发现有热点代码（HotSpot），比如一段代码被重复执行多次，这种就称为“热点代码”，那么后台的编译器 TurboFan 就会把该段热点的字节码编译为高效的机器码，然后当再次执行这段被优化的代码时，只需要执行编译后的机器码就可以了，这样就大大提升了代码的执行效率。</p>
 <h3 id="javascript-的性能优化">JavaScript 的性能优化</h3>
 <p>对于优化 JavaScript 执行效率，你应该将优化的中心聚焦在单次脚本的执行时间和脚本的网络下载上，主要关注以下三点内容：</p>
