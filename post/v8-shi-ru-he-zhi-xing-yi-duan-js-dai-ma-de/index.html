@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1597915741752">
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1597916243863">
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
 
 
@@ -42,7 +42,7 @@ Python、JavaScript
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wendy-banzhuanke.github.io">
-        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1597915741752" class="site-logo">
+        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1597916243863" class="site-logo">
         <h1 class="site-title">wendy-banzhuanke</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -122,15 +122,15 @@ Python、JavaScript
 <p>解释型语言编写的程序，在每次运行时都需要通过解释器对程序进行动态解释和执行。</p>
 <h4 id="抽象语法树ast">抽象语法树（AST）</h4>
 <p>如下代码：</p>
-<pre><code class="language-javascript">var myName = &quot;极客时间&quot;
+<pre><code class="language-javascript">var myName = &quot;你好，代码&quot;
 function foo(){
   return 23;
 }
-myName = &quot;geektime&quot;
+myName = &quot;hello code&quot;
 foo()
 </code></pre>
 <p>转成AST树（与HTML代码转换成DOM树类似）：<br>
-<img src="https://wendy-banzhuanke.github.io/post-images/1597913804146.png" alt="" loading="lazy"></p>
+<img src="https://wendy-banzhuanke.github.io/post-images/1597916229158.png" alt="" loading="lazy"></p>
 <p>AST 是非常重要的一种数据结构，在很多项目中都有应用。如Babel、ESLint，Babel 是一个被广泛使用的代码转码器，可以将 ES6 代码转为 ES5 代码，这意味着你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持 ES6。Babel 的工作原理就是先将 ES6 源码转换为 AST，然后再将 ES6 语法的 AST 转换为 ES5 语法的 AST，最后利用 ES5 的 AST 生成 JavaScript 源代码。</p>
 <h4 id="字节码bytecode">字节码（Bytecode）</h4>
 <p>字节码就是介于 AST 和机器码之间的一种代码。但是与特定类型的机器码无关，字节码需要通过解释器将其转换为机器码后才能执行。</p>
