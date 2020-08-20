@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1597827422718">
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1597915703881">
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
 
 
@@ -26,12 +26,13 @@
 
     <meta name="description" content="要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。
 
+了解
+编译型语言
+C/C++、GO
+解释型语言
+Python、JavaScript
 编译器（Compiler）
-解释器（Interpreter）
-抽象语法树（AST）
-字节码（Bytecode）
-即时编译器（JIT
-..." />
+编译型语言在程序执行之前，先通过编译器编译成机器能读懂的二进制文件..." />
     <meta name="keywords" content="JavaScript,V8" />
   </head>
   <body>
@@ -41,7 +42,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wendy-banzhuanke.github.io">
-        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1597827422718" class="site-logo">
+        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1597915703881" class="site-logo">
         <h1 class="site-title">wendy-banzhuanke</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -109,11 +110,44 @@
             <div class="post-content" v-pre>
               <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
 <!-- more -->
+<h3 id="了解">了解</h3>
+<h4 id="编译型语言">编译型语言</h4>
+<p>C/C++、GO</p>
+<h4 id="解释型语言">解释型语言</h4>
+<p>Python、JavaScript</p>
 <h4 id="编译器compiler">编译器（Compiler）</h4>
+<p>编译型语言在程序执行之前，先通过编译器编译成机器能读懂的二进制文件 并保留；<br>
+每次在程序执行时，直接运行该二进制文件，无需重新编译</p>
 <h4 id="解释器interpreter">解释器（Interpreter）</h4>
+<p>解释型语言编写的程序，在每次运行时都需要通过解释器对程序进行动态解释和执行。</p>
 <h4 id="抽象语法树ast">抽象语法树（AST）</h4>
+<p>如下代码：</p>
+<pre><code class="language-javascript">var myName = &quot;极客时间&quot;
+function foo(){
+  return 23;
+}
+myName = &quot;geektime&quot;
+foo()
+</code></pre>
+<p>转成AST树（与HTML代码转换成DOM树类似）：<br>
+<img src="https://wendy-banzhuanke.github.io/post-images/1597913804146.png" alt="" loading="lazy"></p>
+<p>AST 是非常重要的一种数据结构，在很多项目中都有应用。如Babel、ESLint，Babel 是一个被广泛使用的代码转码器，可以将 ES6 代码转为 ES5 代码，这意味着你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持 ES6。Babel 的工作原理就是先将 ES6 源码转换为 AST，然后再将 ES6 语法的 AST 转换为 ES5 语法的 AST，最后利用 ES5 的 AST 生成 JavaScript 源代码。</p>
 <h4 id="字节码bytecode">字节码（Bytecode）</h4>
-<h4 id="即时编译器jit">即时编译器（JIT</h4>
+<p>字节码就是介于 AST 和机器码之间的一种代码。但是与特定类型的机器码无关，字节码需要通过解释器将其转换为机器码后才能执行。</p>
+<h4 id="即时编译器jit">即时编译器（JIT)</h4>
+<p>字节码配合解释器和编译器，比如 Java 和 Python 的虚拟机也都是基于这种技术实现的。</p>
+<figure data-type="image" tabindex="1"><img src="https://wendy-banzhuanke.github.io/post-images/1597915007180.png" alt="" loading="lazy"></figure>
+<p>具体到 V8，就是指解释器 Ignition 在解释执行字节码的同时，收集代码信息，当它发现某一部分代码变热了之后，TurboFan 编译器便闪亮登场，把热点的字节码转换为机器码，并把转换后的机器码保存起来，以备下次使用。</p>
+<h3 id="执行代码">执行代码</h3>
+<p>通过解释器将AST树生成字节码之后，如果有一段第一次执行的字节码，解释器 Ignition 会逐条解释执行字节码。<br>
+在 Ignition 执行字节码的过程中，如果发现有热点代码（HotSpot），比如一段代码被重复执行多次，这种就称为“热点代码”，那么后台的编译器 TurboFan 就会把该段热点的字节码编译为高效的机器码，然后当再次执行这段被优化的代码时，只需要执行编译后的机器码就可以了，这样就大大提升了代码的执行效率。</p>
+<h3 id="javascript-的性能优化">JavaScript 的性能优化</h3>
+<p>对于优化 JavaScript 执行效率，你应该将优化的中心聚焦在单次脚本的执行时间和脚本的网络下载上，主要关注以下三点内容：</p>
+<ol>
+<li>提升单次脚本的执行速度，避免 JavaScript 的长任务霸占主线程，这样可以使得页面快速响应交互；</li>
+<li>避免大的内联脚本，因为在解析 HTML 的过程中，解析和编译也会占用主线程；</li>
+<li>减少 JavaScript 文件的容量，因为更小的文件会提升下载速度，并且占用更低的内存。</li>
+</ol>
 
             </div>
             
