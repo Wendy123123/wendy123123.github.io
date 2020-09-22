@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-08-20T10:07:54.804Z</updated>
+    <updated>2020-09-22T01:39:24.670Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://wendy-banzhuanke.github.io/images/avatar.png</logo>
     <icon>https://wendy-banzhuanke.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wendy-banzhuanke</rights>
+    <entry>
+        <title type="html"><![CDATA[express-post的req.body总是undefined的原因]]></title>
+        <id>https://wendy-banzhuanke.github.io/post/express-post-de-reqbody-zong-shi-undefined-de-yuan-yin/</id>
+        <link href="https://wendy-banzhuanke.github.io/post/express-post-de-reqbody-zong-shi-undefined-de-yuan-yin/">
+        </link>
+        <updated>2020-09-22T01:31:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>因为express将body-parser分离了出来，所以你需要手动注入body-parser库</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>因为express将body-parser分离了出来，所以你需要手动注入body-parser库</p>
+<!-- more -->
+<p>需要手动添加进下面的内容即可</p>
+<pre><code class="language-javascript">var path = require('path');
+var bodyParser = require('body-parser');//用于req.body获取值的
+app.use(bodyParser.json());
+// 创建 application/x-www-form-urlencoded 编码解析
+app.use(bodyParser.urlencoded({ extended: false }));
+</code></pre>
+<p>如果传输的内容非string类型时，也总是会得到undefined的结果， 需要对上面的配置进行如下修改：</p>
+<pre><code class="language-javascript">app.use(bodyParser.urlencoded({ extended: true}));
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebAPI之setTimeout实现]]></title>
+        <id>https://wendy-banzhuanke.github.io/post/webapi-zhi-settimeout-shi-xian/</id>
+        <link href="https://wendy-banzhuanke.github.io/post/webapi-zhi-settimeout-shi-xian/">
+        </link>
+        <updated>2020-08-25T11:52:52.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>浏览器页面是通过消息队列和时间循环来驱动的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[什么是Event Loop]]></title>
         <id>https://wendy-banzhuanke.github.io/post/1-shi-me-shi-event-loop/</id>
