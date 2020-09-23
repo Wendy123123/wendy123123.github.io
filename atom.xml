@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-09-22T01:39:24.670Z</updated>
+    <updated>2020-09-23T14:48:50.254Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://wendy-banzhuanke.github.io/images/avatar.png</logo>
     <icon>https://wendy-banzhuanke.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wendy-banzhuanke</rights>
+    <entry>
+        <title type="html"><![CDATA[浅谈JS函数柯里化]]></title>
+        <id>https://wendy-banzhuanke.github.io/post/qian-tan-js-han-shu-ke-li-hua/</id>
+        <link href="https://wendy-banzhuanke.github.io/post/qian-tan-js-han-shu-ke-li-hua/">
+        </link>
+        <updated>2020-09-23T14:48:20.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[express-post的req.body总是undefined的原因]]></title>
         <id>https://wendy-banzhuanke.github.io/post/express-post-de-reqbody-zong-shi-undefined-de-yuan-yin/</id>
