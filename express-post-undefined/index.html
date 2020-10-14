@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | wendy-banzhuanke</title>
+<title>express-post的req.body总是undefined的原因 | wendy-banzhuanke</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,24 @@
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态">
+    <meta name="description" content="因为express将body-parser分离了出来，所以你需要手动注入body-parser库
+
+需要手动添加进下面的内容即可
+var path = require('path');
+var bodyParser = require('b..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,14 +99,47 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">express-post的req.body总是undefined的原因</h2>
+            <div class="post-date">2020-09-22</div>
             
-              <a class="tag" href="https://wendy-banzhuanke.github.io/H1PXxSYbt/">JavaScript</a>
+            <div class="post-content" v-pre>
+              <p>因为express将body-parser分离了出来，所以你需要手动注入body-parser库</p>
+<!-- more -->
+<p>需要手动添加进下面的内容即可</p>
+<pre><code class="language-javascript">var path = require('path');
+var bodyParser = require('body-parser');//用于req.body获取值的
+app.use(bodyParser.json());
+// 创建 application/x-www-form-urlencoded 编码解析
+app.use(bodyParser.urlencoded({ extended: false }));
+</code></pre>
+<p>如果传输的内容非string类型时，也总是会得到undefined的结果， 需要对上面的配置进行如下修改：</p>
+<pre><code class="language-javascript">app.use(bodyParser.urlencoded({ extended: true}));
+</code></pre>
+
+            </div>
             
-              <a class="tag" href="https://wendy-banzhuanke.github.io/TwmOYHCy8/">V8</a>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wendy-banzhuanke.github.io/v8-01/">
+                  <h3 class="post-title">
+                    V8是如何执行一段js代码的
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -115,6 +159,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
