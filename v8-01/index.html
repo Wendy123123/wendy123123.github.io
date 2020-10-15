@@ -1,26 +1,13 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>V8是如何执行一段js代码的 | wendy-banzhuanke</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1602650960378">
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1602776577430">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="alternate" type="application/atom+xml" title="V8是如何执行一段js代码的 | wendy-banzhuanke - Atom Feed" href="https://wendy-banzhuanke.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
@@ -34,81 +21,90 @@ Python、JavaScript
 编译器（Compiler）
 编译型语言在程序执行之前，先通过编译器编译成机器能读懂的二进制文件..." />
     <meta name="keywords" content="JavaScript,V8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://wendy-banzhuanke.github.io">
-        <img src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1602650960378" class="site-logo">
-        <h1 class="site-title">wendy-banzhuanke</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wendy-banzhuanke.github.io">
+  <img class="avatar" src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1602776577430" alt="">
+  </a>
+  <h1 class="site-title">
+    wendy-banzhuanke
+  </h1>
+  <p class="site-description">
+    撸起袖子加油干！
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          Home
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          Archives
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-    </div>
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/about" class="menu">
+          About Me
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      快乐是赏赐，悲伤是考验，不快乐也不悲伤，是生活的常态
-    </div>
-    <div class="site-footer">
-       | <a class="rss" href="https://wendy-banzhuanke.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">V8是如何执行一段js代码的</h2>
-            <div class="post-date">2019-07-16</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              V8是如何执行一段js代码的
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-07-16
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://wendy-banzhuanke.github.io/H1PXxSYbt/" class="post-tag">
+                  # JavaScript
+                </a>
+              
+                <a href="https://wendy-banzhuanke.github.io/TwmOYHCy8/" class="post-tag">
+                  # V8
+                </a>
+              
+            </div>
             
-            <div class="post-content" v-pre>
-              <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
 <!-- more -->
 <h3 id="了解">了解</h3>
 <h4 id="编译型语言">编译型语言</h4>
@@ -149,86 +145,99 @@ foo()
 <li>减少 JavaScript 文件的容量，因为更小的文件会提升下载速度，并且占用更低的内存。</li>
 </ol>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%BA%86%E8%A7%A3">了解</a>
+<ul>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80">编译型语言</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80">解释型语言</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8compiler">编译器（Compiler）</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8A%E5%99%A8interpreter">解释器（Interpreter）</a></li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91ast">抽象语法树（AST）</a></li>
+<li><a href="#%E5%AD%97%E8%8A%82%E7%A0%81bytecode">字节码（Bytecode）</a></li>
+<li><a href="#%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91%E5%99%A8jit">即时编译器（JIT)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81">执行代码</a></li>
+<li><a href="#javascript-%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">JavaScript 的性能优化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://wendy-banzhuanke.github.io/H1PXxSYbt/" class="tag">
-                    JavaScript
-                  </a>
-                
-                  <a href="https://wendy-banzhuanke.github.io/TwmOYHCy8/" class="tag">
-                    V8
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://wendy-banzhuanke.github.io/qian-tan-js-han-shu-ke-li-hua/">
-                  <h3 class="post-title">
-                    浅谈JS函数柯里化
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
-
+          </article>
         </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wendy-banzhuanke.github.io/qian-tan-js-han-shu-ke-li-hua/">
+              <h3 class="post-title">
+                浅谈JS函数柯里化
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  如果勤快像懒一样那么容易就能做到，猪都能上天了~~~（并没有贬低🐷的意思）
+  <a class="rss" href="https://wendy-banzhuanke.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
+      hljs.initHighlightingOnLoad()
 
-      var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: '',
-        owner: '',
-        admin: [''],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-      gitalk.render('gitalk-container')
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
     </script>
-  
-
-  
-
-
-
-
   </body>
 </html>
