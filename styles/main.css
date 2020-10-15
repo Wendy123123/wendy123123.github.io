@@ -979,6 +979,10 @@ td {
         max-width: 900px;
       }
     
+      .post-detail .post .post-content p {
+        font-size: 14px;
+      }
+    
       .post-container .post .post-title {
         text-align: left;
       }
