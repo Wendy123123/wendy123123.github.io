@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>V8是如何执行一段js代码的 | wendy-banzhuanke</title>
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1602776736439">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="V8是如何执行一段js代码的 | wendy-banzhuanke - Atom Feed" href="https://wendy-banzhuanke.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。
+
+了解
+编译型语言
+C/C++、GO
+解释型语言
+Python、JavaScript
+编译器（Compiler）
+编译型语言在程序执行之前，先通过编译器编译成机器能读懂的二进制文件..." />
+    <meta name="keywords" content="JavaScript,V8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wendy-banzhuanke.github.io">
+  <img class="avatar" src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1602776736439" alt="">
+  </a>
+  <h1 class="site-title">
+    wendy-banzhuanke
+  </h1>
+  <p class="site-description">
+    撸起袖子加油干！
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/about" class="menu">
+          About Me
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              V8是如何执行一段js代码的
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-01-07
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://wendy-banzhuanke.github.io/H1PXxSYbt/" class="post-tag">
+                  # JavaScript
+                </a>
+              
+                <a href="https://wendy-banzhuanke.github.io/TwmOYHCy8/" class="post-tag">
+                  # V8
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://wendy-banzhuanke.github.io/post-images/js-file-v8.jpeg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
+<!-- more -->
+<h3 id="了解">了解</h3>
+<h4 id="编译型语言">编译型语言</h4>
+<p>C/C++、GO</p>
+<h4 id="解释型语言">解释型语言</h4>
+<p>Python、JavaScript</p>
+<h4 id="编译器compiler">编译器（Compiler）</h4>
+<p>编译型语言在程序执行之前，先通过编译器编译成机器能读懂的二进制文件 并保留；<br>
+每次在程序执行时，直接运行该二进制文件，无需重新编译</p>
+<h4 id="解释器interpreter">解释器（Interpreter）</h4>
+<p>解释型语言编写的程序，在每次运行时都需要通过解释器对程序进行动态解释和执行。</p>
+<h4 id="抽象语法树ast">抽象语法树（AST）</h4>
+<p>如下代码：</p>
+<pre><code class="language-javascript">var myName = &quot;你好，代码&quot;
+function foo(){
+  return 23;
+}
+myName = &quot;hello code&quot;
+foo()
+</code></pre>
+<p>转成AST树（与HTML代码转换成DOM树类似）：<br>
+<img src="https://wendy-banzhuanke.github.io/post-images/1597918044261.png" alt="" loading="lazy"></p>
+<p>AST 是非常重要的一种数据结构，在很多项目中都有应用。如Babel、ESLint，Babel 是一个被广泛使用的代码转码器，可以将 ES6 代码转为 ES5 代码，这意味着你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持 ES6。Babel 的工作原理就是先将 ES6 源码转换为 AST，然后再将 ES6 语法的 AST 转换为 ES5 语法的 AST，最后利用 ES5 的 AST 生成 JavaScript 源代码。</p>
+<h4 id="字节码bytecode">字节码（Bytecode）</h4>
+<p>字节码就是介于 AST 和机器码之间的一种代码。但是与特定类型的机器码无关，字节码需要通过解释器将其转换为机器码后才能执行。</p>
+<h4 id="即时编译器jit">即时编译器（JIT)</h4>
+<p>字节码配合解释器和编译器，比如 Java 和 Python 的虚拟机也都是基于这种技术实现的。</p>
+<figure data-type="image" tabindex="1"><img src="https://wendy-banzhuanke.github.io/post-images/1597915007180.png" alt="" loading="lazy"></figure>
+<p>具体到 V8，就是指解释器 Ignition 在解释执行字节码的同时，收集代码信息，当它发现某一部分代码变热了之后，TurboFan 编译器便闪亮登场，把热点的字节码转换为机器码，并把转换后的机器码保存起来，以备下次使用。</p>
+<h3 id="执行代码">执行代码</h3>
+<p>通过解释器将AST树生成字节码之后，解释器 Ignition 会逐条解释执行字节码。<br>
+在 Ignition 执行字节码的过程中，如果发现有热点代码（HotSpot），比如一段代码被重复执行多次，这种就称为“热点代码”，那么后台的编译器 TurboFan 就会把该段热点的字节码编译为高效的机器码，然后当再次执行这段被优化的代码时，只需要执行编译后的机器码就可以了，这样就大大提升了代码的执行效率。</p>
+<h3 id="javascript-的性能优化">JavaScript 的性能优化</h3>
+<p>对于优化 JavaScript 执行效率，你应该将优化的中心聚焦在单次脚本的执行时间和脚本的网络下载上，主要关注以下三点内容：</p>
+<ol>
+<li>提升单次脚本的执行速度，避免 JavaScript 的长任务霸占主线程，这样可以使得页面快速响应交互；</li>
+<li>避免大的内联脚本，因为在解析 HTML 的过程中，解析和编译也会占用主线程；</li>
+<li>减少 JavaScript 文件的容量，因为更小的文件会提升下载速度，并且占用更低的内存。</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%BA%86%E8%A7%A3">了解</a>
+<ul>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80">编译型语言</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80">解释型语言</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8compiler">编译器（Compiler）</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8A%E5%99%A8interpreter">解释器（Interpreter）</a></li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91ast">抽象语法树（AST）</a></li>
+<li><a href="#%E5%AD%97%E8%8A%82%E7%A0%81bytecode">字节码（Bytecode）</a></li>
+<li><a href="#%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91%E5%99%A8jit">即时编译器（JIT)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81">执行代码</a></li>
+<li><a href="#javascript-%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">JavaScript 的性能优化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wendy-banzhuanke.github.io/qian-tan-js-han-shu-ke-li-hua/">
+              <h3 class="post-title">
+                浅谈JS函数柯里化
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  如果勤快像懒一样那么容易就能做到，猪都能上天了~~~（并没有贬低🐷的意思）
+  <a class="rss" href="https://wendy-banzhuanke.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
