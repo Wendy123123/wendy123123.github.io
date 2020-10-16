@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-10-16T16:04:04.835Z</updated>
+    <updated>2020-10-16T16:06:39.116Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -22,6 +22,13 @@
         <content type="html"><![CDATA[<p><strong>模块的核心就是创建独立的作用域</strong>。早期，前端无模块化时代，经常会遇到几个问题，怎么复用一段代码？怎么避免多人协作时命名冲突？如何管理当前文件的依赖？JavaScript模块化的出现有效的解决了上述问题，但JavaScript模块化之路充满了坎坷。</p>
 <p>下面我们由近及远来梳理一下JavaScript模块发展史上那些著名的模块规范与实现。</p>
 ]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JS 之 prototype]]></title>
+        <id>https://wendy-banzhuanke.github.io/js-file-prototype/</id>
+        <link href="https://wendy-banzhuanke.github.io/js-file-prototype/">
+        </link>
+        <updated>2019-08-02T14:04:18.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[JS 之 this详解]]></title>
