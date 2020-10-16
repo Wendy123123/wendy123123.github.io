@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-10-15T16:02:01.866Z</updated>
+    <updated>2020-10-16T04:26:16.848Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -40,9 +40,11 @@
         <link href="https://wendy-banzhuanke.github.io/js-file-v8/">
         </link>
         <updated>2019-01-07T08:01:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
+        <summary type="html"><![CDATA[<p>众所周知，我们通过编程语言完成的程序是通过处理器运行的。但是处理器不能直接理解我们通过高级语言（如C++、Go、JavaScript等）编写的代码，只能理解机器码，所以在执行程序之前，需要经过一系列的步骤，将我们编写的代码翻译成机器语言。这个过程一般是由编译器（Compiler） 或者解释器（Interpreter） 来完成。</p>
+<p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
+        <content type="html"><![CDATA[<p>众所周知，我们通过编程语言完成的程序是通过处理器运行的。但是处理器不能直接理解我们通过高级语言（如C++、Go、JavaScript等）编写的代码，只能理解机器码，所以在执行程序之前，需要经过一系列的步骤，将我们编写的代码翻译成机器语言。这个过程一般是由编译器（Compiler） 或者解释器（Interpreter） 来完成。</p>
+<p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
 ]]></content>
     </entry>
     <entry>
