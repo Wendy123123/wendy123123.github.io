@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-10-16T15:55:26.045Z</updated>
+    <updated>2020-10-16T15:56:39.167Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -24,6 +24,17 @@
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[JS 之 this详解]]></title>
+        <id>https://wendy-banzhuanke.github.io/js-file-this/</id>
+        <link href="https://wendy-banzhuanke.github.io/js-file-this/">
+        </link>
+        <updated>2019-08-12T15:50:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>this关键字是JavaScript中最复杂的机制之一。它会被自动定义在所有函数的作用域中。ES6中的箭头函数，ES7中的函数绑定运算符等，都是重新定义了this的调用位置。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>this关键字是JavaScript中最复杂的机制之一。它会被自动定义在所有函数的作用域中。ES6中的箭头函数，ES7中的函数绑定运算符等，都是重新定义了this的调用位置。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[V8是如何执行一段js代码的]]></title>
         <id>https://wendy-banzhuanke.github.io/js-file-v8/</id>
         <link href="https://wendy-banzhuanke.github.io/js-file-v8/">
@@ -34,17 +45,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>众所周知，我们通过编程语言完成的程序是通过处理器运行的。但是处理器不能直接理解我们通过高级语言（如C++、Go、JavaScript等）编写的代码，只能理解机器码，所以在执行程序之前，需要经过一系列的步骤，将我们编写的代码翻译成机器语言。这个过程一般是由编译器（Compiler） 或者解释器（Interpreter） 来完成。</p>
 <p>要深入理解 V8 的工作原理，先需要搞清楚一些概念和原理。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JS 之 this详解]]></title>
-        <id>https://wendy-banzhuanke.github.io/js-file-this/</id>
-        <link href="https://wendy-banzhuanke.github.io/js-file-this/">
-        </link>
-        <updated>2019-01-04T15:50:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>this关键字是JavaScript中最复杂的机制之一。它会被自动定义在所有函数的作用域中。ES6中的箭头函数，ES7中的函数绑定运算符等，都是重新定义了this的调用位置。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>this关键字是JavaScript中最复杂的机制之一。它会被自动定义在所有函数的作用域中。ES6中的箭头函数，ES7中的函数绑定运算符等，都是重新定义了this的调用位置。</p>
 ]]></content>
     </entry>
     <entry>
