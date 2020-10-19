@@ -2,17 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>JS 之 prototype详解 | wendy-banzhuanke</title>
-<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1603009423002">
+<title>JS 之 原型详解 | wendy-banzhuanke</title>
+<link rel="shortcut icon" href="https://wendy-banzhuanke.github.io/favicon.ico?v=1603118566464">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wendy-banzhuanke.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="JS 之 prototype详解 | wendy-banzhuanke - Atom Feed" href="https://wendy-banzhuanke.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="JS 之 原型详解 | wendy-banzhuanke - Atom Feed" href="https://wendy-banzhuanke.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="这里
-" />
+    <meta name="description" content="如果要访问对象中并不存在的一个属性，Get（getter）操作就会查找对象内部Prototype关联的对象。这个关联关系实际上定义了一条“原型链”（有点像嵌套的作用域链），在查找属性时会对它进行遍历。
+下面我们来详细介绍一下它，首先需要了解..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://wendy-banzhuanke.github.io">
-  <img class="avatar" src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1603009423002" alt="">
+  <img class="avatar" src="https://wendy-banzhuanke.github.io/images/avatar.png?v=1603118566464" alt="">
   </a>
   <h1 class="site-title">
     wendy-banzhuanke
@@ -75,14 +75,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              JS 之 prototype详解
+              JS 之 原型详解
             </h2>
             <div class="post-info">
               <span>
                 2019-08-02
               </span>
               <span>
-                1 min read
+                4 min read
               </span>
               
             </div>
@@ -91,11 +91,107 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>这里</p>
+                <p>如果要访问对象中并不存在的一个属性，Get（getter）操作就会查找对象内部Prototype关联的对象。这个关联关系实际上定义了一条“原型链”（有点像嵌套的作用域链），在查找属性时会对它进行遍历。</p>
+<p>下面我们来详细介绍一下它，首先需要了解几个概念。</p>
+<!-- more -->
+<h3 id="1-prototype">1. Prototype</h3>
+<p>JavaScript中的对象有一个特殊的Prototype内置对象，其实就是对于其他对象的引用。几乎所有的对象在创建时Prototype属性都会被赋予一个非空的值。</p>
+<p>思考如下代码：</p>
+<pre><code class="language-javascript">
+var anotherObject = {
+    a: 2,    
+}
+
+var myObject = Object.create(anotherObject);
+
+console.log(myObject.a); // 2
+</code></pre>
+<p>myObject对象的Prototype关联到了anotherObject。当试图引用对象的属性时会触发Get操作，比如myObject.a，显然myObject.a并不存在，但尽管如此，属性访问仍然成功的找到了值2。对于默认的Get操作来说，第一步就是检查对象本身是否有这个属性，如果有的话就使用它。但是如果a不在myObject中，就需要使用对象的Prototype链了，这个过程会持续找到匹配的属性名或者查找完整的Prototype链，如果找到不Get操作的返回值是undefined。</p>
+<ul>
+<li>
+<h5 id="objectprototype">Object.prototype</h5>
+</li>
+</ul>
+<p>所有普通的Prototype链最终都会指向内置的Object.prototype。因此，它包含JavaScript中许多通用功能。比如.toString()和.valueOf()都是挂载在Object.prototype上面的。</p>
+<ul>
+<li>
+<h5 id="属性设置和屏蔽">属性设置和屏蔽</h5>
+</li>
+</ul>
+<pre><code class="language-javascript">myObject.foo = &quot;bar&quot;;
+</code></pre>
+<p>分析以上代码，如果foo不直接存在于myObject中而是存在于原型链上层时myObject.foo = &quot;bar&quot;会出现三种情况：</p>
+<ol>
+<li>如果在prototype链上层存在名为foo的普通数据访问属性并且没有被标记为制度（writable: false）,那就会直接在myObject中添加一个名为foo的新属性，它是屏蔽属性。</li>
+<li>如果在Prototype链上层存在foo, 且它被标记为只读（writable: false）, 那么无法修改已有属性或者在myObject上创建屏蔽属性。如果运行在严格模式下，代码会抛出一个错误。否则，这条赋值语句会被忽略。总之，不会发生屏蔽。</li>
+<li>如果在Prototype链上层存在foo并且它是一个setter，那么就一定会调用这个setter。foo不会被添加到myObject, 也不会重新定义foo这个setter。</li>
+</ol>
+<p>以上三种情况，只有第一种会触发屏蔽。</p>
+<h3 id="2-类">2. 类</h3>
+<ul>
+<li>
+<h5 id="对象">对象</h5>
+</li>
+</ul>
+<p>在JavaScript中，类无法描述对象的行为，（因为根本不存在对象！）对象直接定义自己的行为。JavaScript中只有对象。</p>
+<p>多年以来，JavaScript中有一种奇怪的行为一直在被无耻地滥用，那就是模仿类。</p>
+<p>这种奇怪的“类似类”的行为利用了函数的一种特殊特性：所有的函数默认都会拥有一个名为prototype的公有并且不可枚举的属性。它会指向另一个对象, 这个对象通常被称为Foo的原型。这个原型通过Foo.prototype来访问它，如以下代码所示：</p>
+<pre><code class="language-javascript">function Foo() {
+    // ...
+}
+
+Foo.prototype; // {}
+</code></pre>
+<ul>
+<li>
+<h5 id="构造函数">“构造函数”</h5>
+</li>
+</ul>
+<p>Foo.prototype默认有一个公共并且不可枚举的属性.contructor, 这个属性引用的是对象关联的函数。</p>
+<pre><code class="language-JavaScript">function Foo() {
+    // ...
+}
+
+Foo.prototype.constructor === Foo; // true
+var a = new Foo();
+a.constructor === Foo; // true
+</code></pre>
+<p>函数本身并不是<strong>构造函数</strong>，但当你在普通的函数调用前面加上new关键字之后，就会把这个函数调用变成一个“构造函数调用”。实际上，new会劫持所有普通函数并用构造对象的形式来调用它。</p>
+<ul>
+<li>
+<h5 id="属性__proto__">属性__proto__</h5>
+</li>
+</ul>
+<p>__proto__属性用来读取或者设置当前对象的prototype对象。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-prototype">1. Prototype</a><br>
+*
+<ul>
+<li><a href="#objectprototype">Object.prototype</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%B1%8F%E8%94%BD">属性设置和屏蔽</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%B1%BB">2. 类</a><br>
+*
+<ul>
+<li><a href="#%E5%AF%B9%E8%B1%A1">对象</a></li>
+<li><a href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">“构造函数”</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7__proto__">属性__proto__</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
