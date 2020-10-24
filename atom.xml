@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wendy-banzhuanke.github.io</id>
     <title>wendy-banzhuanke</title>
-    <updated>2020-10-19T14:51:06.967Z</updated>
+    <updated>2020-10-24T09:25:39.564Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wendy-banzhuanke.github.io"/>
     <link rel="self" href="https://wendy-banzhuanke.github.io/atom.xml"/>
@@ -36,6 +36,14 @@
         <link href="https://wendy-banzhuanke.github.io/js-file-promise/">
         </link>
         <updated>2019-08-02T16:07:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>Promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。它最早由社区提出并实现，ES6将其写进了语言标准，统一了用法，并原生提供了Promise对象。</p>
+<p>所谓Promise,简单来说就是一个容器，里面保存着某个未来才会结束的事件的结果。Promise提供统一的API,各种异步操作都可以用同样的方法进行处理。</p>
+<p>下面我们从几方面来了解Promise。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。它最早由社区提出并实现，ES6将其写进了语言标准，统一了用法，并原生提供了Promise对象。</p>
+<p>所谓Promise,简单来说就是一个容器，里面保存着某个未来才会结束的事件的结果。Promise提供统一的API,各种异步操作都可以用同样的方法进行处理。</p>
+<p>下面我们从几方面来了解Promise。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[JS 之 原型详解]]></title>

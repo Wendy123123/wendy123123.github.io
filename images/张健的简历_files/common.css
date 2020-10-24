@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* 编辑页 功能区域样式 */
+.wbdCv-editorBody .function_panel {position:fixed; top:80px; left:50%; margin-left:447px; z-index:26; width:auto; overflow:visible;}
+.wbdCv-editorBody .wbdCv-container.mobile + .function_panel{margin-left:180px;}
+.wbdCv-editorBody .wbdCv-container.mobile + .function_panel .diagnose_defalut{display:none !important;}
+.function_panel .contraction_panel {width:100px;}
+.function_panel .contraction_panel .list {position: relative; text-align: center; cursor: pointer;}
+.function_panel .contraction_panel .list + .list {margin-top: 20px;}
+.function_panel .contraction_panel .list .icon {display: inline-block; width: 46px; height: 46px; background: url("../../images/cvedit_6_2_0.png") no-repeat;}
+.function_panel .contraction_panel .list.diagnose .icon {background-position: -5px -701px;}
+.function_panel .contraction_panel .list.diagnose:hover .icon {background-position: -75px -701px;}
+.function_panel .contraction_panel .list.diagnose .diagnose_number {position:absolute; right:20px; top:5px; width:18px; height:18px; line-height:18px; border-radius:50%; background-color:#fee957; box-shadow:0 2px 2px 0 rgba(35, 35, 35, 0.16); color:#000; font-size:12px; text-align:center;}
+.function_panel .contraction_panel .list.tips .icon {background-position: -145px -701px;}
+.function_panel .contraction_panel .list.tips:hover .icon {background-position: -215px -701px;}
+.function_panel .contraction_panel .list.case .icon {background-position: -285px -701px;}
+.function_panel .contraction_panel .list.case:hover .icon {background-position: -355px -701px;}
+.function_panel .contraction_panel .list .name {font-size: 12px; font-weight: bold; color: #999999;}
+.function_panel.open .contraction_panel{display:none;}
+.function_panel .panel_item,
+.function_panel .panel_tips,
+.function_panel .panel_case{display:none;}
+.function_panel .panel_item{position:fixed; right:0; top:50px; width:300px; height:calc(100% - 50px); background:#fff; transition:all 0.3s; z-index:120;}
+.function_panel .panel_item .close{position:absolute; top:10px; right:10px; width:25px; height:25px; transform:rotate(45deg) scale(0.5); transition:transform 0.3s;}
+.function_panel .panel_item .close::before,
+.function_panel .panel_item .close::after{content:""; position:absolute; border-radius:2px; background-color:#aaa;}
+.function_panel .panel_item .close::before{width:100%; height:3px; top:11px; left:0;}
+.function_panel .panel_item .close::after{width:3px; height:100%; left:11px; top:0;}
+.function_panel .panel_item .close:hover{transform:rotate(135deg) scale(0.5);}
+
+.function_panel .tips_case_panel .close{right:-15px; top:5px;}
+.tips_case_panel .head{position:relative; width:calc(100% - 50px); height:60px; margin:0 auto; border-bottom:1px dashed #e4e3e3;}
+.tips_case_panel .head .navi{position:absolute; bottom:0; left:0; width:100%;}
+.tips_case_panel .head .navi a{display:inline-block; vertical-align:top; height:36px; line-height:36px; font-size:14px; font-weight:bold; color:#3e3e3e; cursor:pointer;}
+.tips_case_panel .head .navi a.current,
+.tips_case_panel .head .navi a:hover{color:#00c091;}
+.tips_case_panel .head .navi a:first-child{margin-right:20px;}
+
+/* 诊断 */
+.function_panel .diagnose_number[data-number="0"]{display:none !important;}
+/* 诊断初始 */
+.function_panel .diagnose_defalut .diagnose_bar{position:relative; width:100%; height:calc(100% - 50px); padding:73px 0; transition:all 0.3s; user-select:none;}
+.diagnose_defalut .diagnose_bar .diagnose_score{display:none; position:relative; width:75px; height:75px; line-height:75px; margin:0 auto 20px; text-align:center; font-size:34px; color:#00c091;}
+.diagnose_defalut .diagnose_bar .diagnose_score::after{content:""; position:absolute; top:0; left:0; width:100%; height:100%; border:1px #00c091 dashed; border-radius:50%;}
+.diagnose_defalut .diagnose_bar .diagnose_title{margin-bottom:3px; text-align:center; font-size:18px; color:#525867;}
+.diagnose_defalut .diagnose_bar .diagnose_message{display:block; line-height:18px; text-align:center; font-size:14px; color:#a4aab9;}
+.diagnose_defalut .diagnose_bar .diagnose_progress{display:none; width:85%; height:5px; margin:10px auto; background-color:#ededed; border-radius:2px; overflow:hidden;}
+.diagnose_defalut .diagnose_bar .diagnose_progress .bar{width:0; height:100%; background-color:#00c091; border-radius:2px; transition:width 0.2s;}
+.diagnose_defalut .diagnose_bar .diagnose_number,
+.diagnose_defalut .diagnose_bar .diagnose_item_number,
+.wbdCv-container .perfect_mark_item{display:block; position:absolute; top:-12px; right:-12px; width:24px; height:24px; line-height:24px; text-align:center; font-weight:bold; font-size:12px; color:#575757; border-radius:50%; background-color:#fee957; box-shadow:0px 2px 2px rgba(0, 0, 0, 0.17);}
+.diagnose_defalut .diagnose_bar .diagnose_item{display:none; position:absolute; top:273px; bottom:30px; left:0; width:100%; height:calc(100% - 380px); padding:0 12px; overflow-x:hidden; overflow-y:auto;}
+.diagnose_defalut .diagnose_bar .diagnose_item::-webkit-scrollbar{width:6px;}
+.diagnose_defalut .diagnose_bar .diagnose_item::-webkit-scrollbar-thumb{background-color:#e5e5e5;}
+.diagnose_defalut .diagnose_item li{position:relative; width:92%; height:42px; margin:0 auto; padding:0 15px; line-height:40px; border:solid 1px #dcdcdc; border-radius:4px; background-color:#fff; font-size: 14px; color: #909aa4; cursor: pointer; transform:translateX(0); transition:transform 0.6s cubic-bezier(.25,.25,1,-0.12);}
+.diagnose_defalut .diagnose_item li.checked{border:solid 1px #00c091; color: #00c091;}
+.diagnose_defalut .diagnose_item li + li{margin-top:12px;}
+.diagnose_defalut .diagnose_bar .diagnose_item_number{right:15px; top:7px;}
+.wbdCv-container .perfect_mark_item{left:-25px; top:0; z-index:20; margin:0; padding:0; border:none; cursor:pointer;}
+.diagnose_defalut .rediagnose_btn{display:none; position:absolute; left:calc(50% - 55px); bottom:30px; width:110px; height:44px; line-height: 44px; font-weight: bold; border-radius: 4px; background-color: #02d19e; font-size: 16px; color: #fff; text-align: center; cursor:pointer;}
+.diagnose_defalut .rediagnose_btn:hover{opacity:0.8;}
+/* 诊断中 */
+.diagnose_defalut.diagnose_midway{height:100%; border-bottom:none;}
+.diagnose_defalut.diagnose_midway .diagnose_bar{padding:73px 0 20px;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_title{color:#00c091;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_message{color:#c2c2c2;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_message i,
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_number{display:none;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .close_panel{display:none;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_item,
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_score,
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_progress,
+.diagnose_defalut.diagnose_midway .diagnose_item li{display:block;}
+.diagnose_defalut.diagnose_midway .diagnose_item li{animation:fadein 0.8s; animation-fill-mode:forwards;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_score::after{animation:rotate 8s linear infinite;}
+.diagnose_defalut.diagnose_midway .diagnose_bar .diagnose_progress .bar{width:1%; background-size:20px 20px; background-image:linear-gradient(135deg,rgba(255, 255, 255, .15) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,transparent 75%, transparent); animation:animate-stripes 3s linear infinite;}
+@-webkit-keyframes animate-stripes{ 0% {background-position:0 0;} 100% {background-position:60px 0;} }
+@-moz-keyframes animate-stripes{ 0% {background-position:0 0;} 100% {background-position:60px 0;} }
+@-ms-keyframes animate-stripes{ 0% {background-position:0 0;} 100% {background-position:60px 0;} }
+@keyframes animate-stripes{ 0% {background-position:0 0;} 100% {background-position:60px 0;} }
+@-webkit-keyframes fadein{ from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadein{ from { opacity:0; } to { opacity:1; } }
+@-ms-keyframes fadein{ from { opacity:0; } to { opacity:1; } }
+@keyframes fadein{ from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes rotate{
+	from {transform:rotate(0deg); }
+	to {transform:rotate(360deg); }
+}
+@-moz-keyframes rotate{
+	from {transform:rotate(0deg); }
+	to {transform:rotate(360deg); }
+}
+@-ms-keyframes rotate{
+	from {transform:rotate(0deg); }
+	to {transform:rotate(360deg); }
+}
+@keyframes rotate{
+	from {transform:rotate(0deg); }
+	to {transform:rotate(360deg); }
+}
+/* 诊断结束 */
+.diagnose_defalut.diagnose_end{height:100%; border-bottom:none;}
+.diagnose_defalut.diagnose_end .diagnose_bar{padding:73px 20px 20px;}
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_title{color:#8a8a8a;}
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_message{color:#00c091;}
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_message i,
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_number{display:none;}
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_item,
+.diagnose_defalut.diagnose_end .diagnose_bar .diagnose_score{display:block;}
+.diagnose_defalut.diagnose_end .diagnose_item li{animation:fadein 0.8s; animation-fill-mode:forwards;}
+/* 诊断低于60分样式 */
+.diagnose_defalut .diagnose_bar.low_score .diagnose_score,
+.diagnose_defalut .diagnose_bar.low_score .diagnose_message{color:#fe6c6d;}
+.diagnose_defalut .diagnose_bar.low_score .diagnose_score::after{border-color:#fe6c6d;}
+/*诊断说明弹框*/
+.modal_content .explain_list{width:100%; margin-bottom:5px; padding-bottom:18px;}
+.modal_content .explain_list:last-child{border:none; padding-bottom:0; margin-bottom:0;}
+.modal_content .explain_list .list_title{display:block; height:30px; line-height:30px; font-size:14px; color:#00c091;}
+.modal_content .explain_list .list_content p{display:block; width:100%; font-size:12px; color:#979fac;}
+.modal_content .explain_list .list_content span{display:inline-block; width:82px; height:82px; margin-top:5px; border:1px solid #fff; border-radius:82px; font-size:12px; margin-right:86px; padding-top:21px; text-align:center; vertical-align:top;}
+.modal_content .explain_list .list_content span:nth-child(1){border-color:#5670d0; color:#5670d0;}
+.modal_content .explain_list .list_content span:nth-child(2){border-color:#00c091; color:#00c091;}
+.modal_content .explain_list .list_content span:nth-child(3){margin-right:0; border-color:#fe6a6a; color:#fe6a6a;}
+/* 诊断结束提示完善弹窗 */
+.diagnose_perfect_modal{display:none; position:absolute; top:-999px; left:-999px; width:380px; z-index:200; border-radius:4px; background-color:#fff; overflow:hidden; box-shadow:0 4px 5px rgba(0, 0, 0, 0.19);}
+.diagnose_perfect_modal .diagnose_item_title{width:100%; height:40px; line-height:40px; padding:0 15px; background-color:#00c091;}
+.diagnose_perfect_modal .diagnose_item_title .diagnose_module_title{color:#fff; font-size:12px;}
+.diagnose_perfect_modal .diagnose_item_title .diagnose_item_close{position:absolute; right:15px; top:12px; width:15px; height:15px; background:url(../../../common/images/Modal-sprite.png?v=V6950) no-repeat -5px -5px; cursor:pointer; transition:transform 0.3s;}
+.diagnose_perfect_modal .diagnose_item_title .diagnose_item_close:hover{transform:rotate(90deg);}
+.diagnose_perfect_modal .diagnose_item_body{padding:15px; background-color:#fff;}
+.diagnose_perfect_modal .diagnose_item_body .diagnose_item_list{min-height:120px;}
+.diagnose_perfect_modal .diagnose_item_body .diagnose_item_list li{font-size:12px; color:#8e8e8e;}
+.diagnose_perfect_modal .diagnose_item_body .diagnose_item_list li::before{content:"●"; margin-right:5px;}
+.diagnose_perfect_modal .diagnose_item_body .to_module_perfect{display:block; margin:15px auto 0; width:70px; height:30px; line-height:30px; text-align:center; background-color:#f69090; border-radius:4px; font-size:14px; color:#fff;}
+.diagnose_perfect_modal .diagnose_item_body .to_module_perfect:hover{opacity:0.85;}
+
+/* 贴士 && 案例 */
+.function_panel .panel_tips,
+.function_panel .panel_case{position:relative; width:100%; height:95%; padding:28px 0;}
+.function_panel .panel_tips::after,
+.function_panel .panel_case::after{content:""; position:absolute; bottom:0; left:0; right:0; z-index:11; height:50px; background-image:linear-gradient(to bottom,rgba(255,255,255,0.2),rgba(255,255,255,1));}
+.function_panel .panel_container{width:100%; height:100%; padding:0 25px; overflow-y:auto;}
+.panel_tips .tips_content_text{width:100%; overflow:hidden;}
+.panel_tips .tips_content_text ul{width:100%;}
+.panel_tips .tips_content_text ul li{display: none; width:100%;}
+.panel_tips .tips_content_text ul li.selected{display:block;}
+.panel_tips .tips_content_text .list{position:relative; width:100%; padding:10px 0;}
+.panel_tips .tips_content_text .title{width:100%; height:26px; line-height:26px; cursor:pointer; color:#5c6876;}
+.panel_tips .tips_content_text .title span{width:90%; display:inline-block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.panel_tips .tips_content_text .title i{position:absolute; right:0; top:12px; display:inline-block; margin:5px 0 0 0; border:6px solid transparent; border-left:6px solid #bdc5d0;}
+.panel_tips .tips_content_text .text{display: none; color:#96a0ac;}
+.panel_tips .tips_content_text .text p{margin: 10px 0; color:#999999;}
+.panel_tips .tips_content_text .text a{color:#00c091;}
+.panel_tips .tips_content_text .text a:hover{text-decoration:underline;}
+.panel_tips .tips_content_text .list.show .text{display: block;}
+.panel_tips .tips_content_text .list.show  .title i{display: block; margin:8px 3px 0 0; border-left:6px solid transparent; border-top:6px solid #bdc5d0;}
+.panel_tips .tips_hd{position: absolute; left:0; top:0; width: 100%; padding:0 15px 10px 15px; background: #fff;}
+/* 案例 */
+.function_panel .panel_case{border-bottom:none;}
+.panel_case .case_header{position:absolute; right:25px; top:-26px; font-size:14px; font-weight:bold; color:#3e3e3e;}
+.case_header .more_case,
+.case_header .change_case{float:right; line-height:14px; font-size:12px; color:#7d818d; font-weight:normal;}
+.case_header .change_case{border-right:1px solid #7d818d; padding-right:8px; margin-right:8px;}
+.case_header .more_case:hover,
+.case_header .change_case:hover{color:#00c091;}
+.panel_case .case_filter{width:100%; height:40px; margin-bottom:15px; font-size:14px; color:#666;}
+.case_filter .case_filter_job,
+.case_filter .case_filter_module{float:left; width:46%; height:40px; border:1px solid #d7d7d7; border-radius:4px;}
+.case_filter .case_filter_job input{display:block; position:relative; width:100%; height:38px; padding:0 20px 0 10px; border-radius:4px; color:#666; cursor:pointer; background-color:transparent;}
+.case_filter .case_filter_job .open_status{right:2px;}
+.case_filter .case_filter_module{float:right; position:relative; cursor:pointer;}
+.case_filter .case_filter_modulename{line-height:38px; padding:0 20px 0 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.case_filter .case_filter_modulelist{display:none; position:absolute; top:38px; left:-1px; right:-1px; z-index:11; border:solid 1px #e2e2e2; border-radius:4px; background-color:#fff; box-shadow:0px 5px 5px rgba(0, 0, 0, 0.05);}
+.case_filter .case_filter_modulelist li{width:100%; padding:0 10px; line-height:26px; font-size:12px; color:#7b818f; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.case_filter .case_filter_modulelist li:hover{color:#00c091; background-color:#eefcf9;}
+.case_filter .case_filter_job::before,
+.case_filter .case_filter_modulename::after{content:""; position:absolute; top:50%; right:2px; margin-top:-10px; width:20px; height:20px; background:url(../../../common/images/Modal-sprite.png?v=V6950) no-repeat -600px -424px;}
+.panel_case .case_list{position:relative; padding:10px; border:1px dashed #656767;}
+.panel_case .case_list + .case_list{margin-top:12px;}
+.panel_case .case_list .case_title{line-height:1.2; margin-bottom:10px; font-size:14px; color:#333333;}
+.panel_case .case_list .case_title span{display:block;}
+.panel_case .case_list .case_content{font-size:14px; color:#999999;}
+.panel_case .case_list .case_masking{position:absolute; top:0; left:0; z-index:-1; width:100%; height:100%; background:rgba(0,0,0,0.2); opacity:0; transition:opacity 0.3s;}
+.panel_case .case_list .case_masking span{position:absolute; top:50%; left:50%; display:inline-block; width:90px; height:30px; line-height:30px; margin:-15px 0 0 -45px; border-radius:4px; background:#00c091; font-size:14px; color:#ffffff; text-align:center; cursor:pointer;}
+.panel_case .case_list:hover .case_masking{z-index:1; opacity:1;}
+.panel_case .jl_search_null span{display:inline-block; width:240px; height:210px; max-width:90%; background:url(../../../images/search/jl_search_null.jpg) no-repeat center; background-size:contain;}
+.function_panel *::-webkit-scrollbar-thumb{background-color:#efefef;}
+.function_panel *::-webkit-scrollbar-thumb:hover,
+.function_panel *::-webkit-scrollbar-thumb:active{background-color:#e1e1e1;}
+/* 案例内容样式重置 */
+.panel_case .case_list .case_title div,
+.panel_case .case_list .case_title ul,
+.panel_case .case_list .case_title ol,
+.panel_case .case_list .case_title li,
+.panel_case .case_list .case_title span,
+.panel_case .case_list .case_title font,
+.panel_case .case_list .case_title p{text-align:initial !important; color:#333 !important; font-size:14px !important;}
+.panel_case .case_list .case_content div,
+.panel_case .case_list .case_content ul,
+.panel_case .case_list .case_content ol,
+.panel_case .case_list .case_content li,
+.panel_case .case_list .case_content span,
+.panel_case .case_list .case_content font,
+.panel_case .case_list .case_content p{text-align:initial !important; color:#999 !important; font-size:14px !important; word-break:break-all;}

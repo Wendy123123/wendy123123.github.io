@@ -1,0 +1,750 @@
+/*
+线上地址：https://file.woodo.cn/upload/fonts/
+本地地址：/public/fonts/fontdata/
+@font-face {
+    font-family: '';
+    src: url('https://file.woodo.cn/upload/fonts/.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+*/
+
+/*
+  英文字体
+*/
+@font-face {
+    font-family: 'woodo-Lineton-Sans';
+    src: local('woodo-Lineton-Sans'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Lineton-Sans.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Lineton-Sans.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Lineton-Slab';
+    src: local('woodo-Lineton-Slab'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Lineton-Slab.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Lineton-Slab.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Kiona-Regular';
+    src: local('woodo-Kiona-Regular'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Kiona-Regular.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Kiona-Regular.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Royal-Twins';
+    src: local('woodo-Royal-Twins'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Royal-Twins.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Royal-Twins.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Reman';
+    src: local('woodo-Reman'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Reman.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Reman.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Apalu';
+    src: local('woodo-Apalu'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Apalu.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Apalu.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Stay-Classy-SLDT';
+    src: local('woodo-Stay-Classy-SLDT'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Stay-Classy-SLDT.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Stay-Classy-SLDT.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Saltery-Alternate';
+    src: local('woodo-Saltery-Alternate'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Saltery-Alternate.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Saltery-Alternate.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Quantum';
+    src: local('woodo-Quantum'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Quantum.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Quantum.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-FrancaBook';
+    src: local('woodo-FrancaBook'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FrancaBook.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FrancaBook.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Asap-BoldItalic';
+    src: local('woodo-Asap-BoldItalic'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Asap-BoldItalic.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Asap-BoldItalic.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Barrio-Regular';
+    src: local('woodo-Barrio-Regular'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Barrio-Regular.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Barrio-Regular.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-blowbrush';
+    src: local('woodo-blowbrush'),
+         url('https://file.woodo.cn/upload/fonts/woodo-blowbrush.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-blowbrush.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Seaside-Resort-NF';
+    src: local('woodo-Seaside-Resort-NF'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Seaside-Resort-NF.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Seaside-Resort-NF.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-lot';
+    src: local('woodo-lot'),
+         url('https://file.woodo.cn/upload/fonts/woodo-lot.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Times-New-Romance';
+    src: local('woodo-Times-New-Romance'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Times-New-Romance.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Times-New-Romance.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*
+  中文字体
+*/
+@font-face {
+    font-family: 'woodo-ZhanKuKuHei';
+    src: local('woodo-ZhanKuKuHei'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuKuHei.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuKuHei.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-WenQuanZhengHei';
+    src: local('woodo-WenQuanZhengHei'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WenQuanZhengHei.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WenQuanZhengHei.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-FangZhengHeiTiJianTi';
+    src: local('woodo-FangZhengHeiTiJianTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengHeiTiJianTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengHeiTiJianTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-FangZhengFangSongJianTi';
+    src: local('woodo-FangZhengFangSongJianTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengFangSongJianTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengFangSongJianTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-FangZhengKaiTiJianTi';
+    src: local('woodo-FangZhengKaiTiJianTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengKaiTiJianTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FangZhengKaiTiJianTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-baotuxiaobaiti';
+    src: local('woodo-baotuxiaobaiti'),
+         url('https://file.woodo.cn/upload/fonts/woodo-baotuxiaobaiti.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-baotuxiaobaiti.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-INgaan';
+    src: local('woodo-INgaan'),
+         url('https://file.woodo.cn/upload/fonts/woodo-INgaan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-INgaan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SetoFont';
+    src: local('woodo-SetoFont'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SetoFont.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SetoFont.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-EBAS';
+    src: local('woodo-EBAS'),
+         url('https://file.woodo.cn/upload/fonts/woodo-EBAS.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-EBAS.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-TW-Sung';
+    src: local('woodo-TW-Sung'),
+         url('https://file.woodo.cn/upload/fonts/woodo-TW-Sung.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-TW-Sung.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YRDZST-Light';
+    src: local('woodo-YRDZST-Light'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Light.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Light.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YRDZST-Regular';
+    src: local('woodo-YRDZST-Regular'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Regular.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Regular.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YRDZST-Semibold';
+    src: local('woodo-YRDZST-Semibold'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Semibold.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YRDZST-Semibold.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-851tegakizatsu';
+    src: local('woodo-851tegakizatsu'),
+         url('https://file.woodo.cn/upload/fonts/woodo-851tegakizatsu.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-851tegakizatsu.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Muyao-Softbrush';
+    src: local('woodo-Muyao-Softbrush'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Muyao-Softbrush.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Muyao-Softbrush.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSansCN-ExtraLight';
+    src: local('woodo-SourceHanSansCN-ExtraLight'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSansCN-ExtraLight.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSansCN-Heavy';
+    src: local('woodo-SourceHanSansCN-Heavy'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSansCN-Heavy.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSansCN-Light';
+    src: local('woodo-SourceHanSansCN-Light'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSansCN-Light.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSans-Simsun-Heavy';
+    src: local('woodo-SourceHanSans-Simsun-Heavy'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSans-Simsun-Heavy.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSans-Simsun-Light';
+    src: local('woodo-SourceHanSans-Simsun-Light'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSans-Simsun-Light.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SourceHanSans-Simsun-SemiBold';
+    src: local('woodo-SourceHanSans-Simsun-SemiBold'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SourceHanSans-Simsun-SemiBold.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HanYiLiLiangHeiJian';
+    src: local('woodo-HanYiLiLiangHeiJian'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanYiLiLiangHeiJian.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanYiLiLiangHeiJian.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HYRunYuan';
+    src: local('woodo-HYRunYuan'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HYRunYuan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HYRunYuan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhengQingKeHuangYouTi';
+    src: local('woodo-ZhengQingKeHuangYouTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhengQingKeHuangYouTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhengQingKeHuangYouTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HanDingJianMeiHei';
+    src: local('woodo-HanDingJianMeiHei'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianMeiHei.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianMeiHei.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HanDingJianTeYuan';
+    src: local('woodo-HanDingJianTeYuan'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianTeYuan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianTeYuan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HanDingJianXingKai';
+    src: local('woodo-HanDingJianXingKai'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianXingKai.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianXingKai.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HanDingJianXinYiTi';
+    src: local('woodo-HanDingJianXinYiTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianXinYiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HanDingJianXinYiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HuaiFangTi';
+    src: local('woodo-HuaiFangTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HuaiFangTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HuaiFangTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-japan-aoyagireisyosimo';
+    src: local('woodo-japan-aoyagireisyosimo'),
+         url('https://file.woodo.cn/upload/fonts/woodo-japan-aoyagireisyosimo.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-japan-aoyagireisyosimo.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-japan-RiWenMaoBiZiTi';
+    src: local('woodo-japan-RiWenMaoBiZiTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-japan-RiWenMaoBiZiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-japan-RiWenMaoBiZiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-PangMenZhengDaoBiaoTiTi';
+    src: local('woodo-PangMenZhengDaoBiaoTiTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-PangMenZhengDaoBiaoTiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-PangMenZhengDaoBiaoTiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-RuiZiZhenYanTi';
+    src: local('woodo-RuiZiZhenYanTi'),
+         url('https://file.woodo.cn/upload/fonts/woodo-RuiZiZhenYanTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-RuiZiZhenYanTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-QingNingYouYuan';
+    src: local('woodo-QingNingYouYuan'),
+         url('https://file.woodo.cn/upload/fonts/woodo-QingNingYouYuan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-QingNingYouYuan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-GenShinGothic-Normal';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-GenShinGothic-Normal.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-GenShinGothic-Normal.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-GenJyuuGothic-Normal';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-GenJyuuGothic-Normal.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-GenJyuuGothic-Normal.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-WangHanZongWeiBeiTiYi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongWeiBeiTiYi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongWeiBeiTiYi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-WangHanZongKanTingLiuFan';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongKanTingLiuFan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongKanTingLiuFan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-WangHanZongChaoMingTiFan';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongChaoMingTiFan.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WangHanZongChaoMingTiFan.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-SoukouMincho';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-SoukouMincho.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-SoukouMincho.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Genkaimincho';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-Genkaimincho.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Genkaimincho.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-Chogokuboso-Gothic';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-Chogokuboso-Gothic.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-Chogokuboso-Gothic.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhanKuWenYi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuWenYi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuWenYi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhanKuGaoDuanHei';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuGaoDuanHei.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuGaoDuanHei.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhanKuKuaiLe';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuKuaiLe.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuKuaiLe.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhanKuXiaoWeiLOGO';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuXiaoWeiLOGO.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhanKuXiaoWeiLOGO.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-PangMenZhengDaoQingSongTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-PangMenZhengDaoQingSongTi.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YouSheBiaoTiHei';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-YouSheBiaoTiHei.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YouSheBiaoTiHei.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HuXiaoBoZhenShuaiTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-HuXiaoBoZhenShuaiTi.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-LianMengQIYiLuShuaiZhengRuiHeiTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-LianMengQIYiLuShuaiZhengRuiHeiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-LianMengQIYiLuShuaiZhengRuiHeiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-PangMenZhengDaoCuShuTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-PangMenZhengDaoCuShuTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-PangMenZhengDaoCuShuTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-WenZangShuFang';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-WenZangShuFang.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-WenZangShuFang.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-JiangXiZhuoKai';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-JiangXiZhuoKai.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-JiangXiZhuoKai.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZhuoJianGanLanJianTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZhuoJianGanLanJianTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-ZhuoJianGanLanJianTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HuXiaoBoNanShenTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-HuXiaoBoNanShenTi.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-QingSongShouXieTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-QingSongShouXieTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-QingSongShouXieTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-FengGuangMingRuiTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-FengGuangMingRuiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-FengGuangMingRuiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-HongLeiBanShuTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-HongLeiBanShuTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-HongLeiBanShuTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YanShiFoXiTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-YanShiFoXiTi.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YanShiFoXiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-YanShiYouRanXiaoKai';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-YanShiYouRanXiaoKai.woff2') format('woff2'),
+         url('https://file.woodo.cn/upload/fonts/woodo-YanShiYouRanXiaoKai.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'woodo-ZiTiQuanXinYiGuanHeiTi';
+    src: url('https://file.woodo.cn/upload/fonts/woodo-ZiTiQuanXinYiGuanHeiTi.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
